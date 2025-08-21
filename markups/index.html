@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Client Tell</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="logo">
+        <img src="law-removebg-preview.png" alt="logo" class="logo-img" />
+        <h1 class="logo-text">THE CLIENT TELL</h1>
+      </div>
+      <div class="nav-items">
+        <a href="#" class="active">Home</a>
+        <a href="#">Reviews</a>
+        <a href="#">Community</a>
+        <a href="#">Storyboard</a>
+      </div>
+      <div class="login-btn">
+        <button>Register/Login</button>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          Before You Hire, Make Sure <br />
+          You’re Hiring Right
+        </h1>
+        <p class="hero-subtext">
+          Browse trusted client reviews to uncover the facts, avoid costly
+          mistakes, and choose a lawyer who will truly stand by your side.
+        </p>
+
+        <!-- Search Box -->
+        <div class="search-box">
+          <div class="input-row-top">
+            <input type="text" placeholder="Attorney Name" />
+            <input type="text" placeholder="Bar Number" />
+          </div>
+          <div class="input-row-bottom">
+            <input type="text" placeholder="City of Practice" />
+            <select>
+              <option value="">State of Practice</option>
+              <option value="assam">Assam</option>
+              <option value="bihar">Bihar</option>
+              <option value="up">Uttar Pradesh</option>
+              <option value="hp">Himachal Pradesh</option>
+              <option value="kerala">Kerala</option>
+            </select>
+            <button>Search</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="review-section">
+      <h2>Recently Reviewed Lawyers</h2>
+      <p class="subtitle">
+        See what others are saying before you make your choice.
+      </p>
+
+      <div class="carousel" id="carousel">
+        <div class="card">
+          <div class="top">
+            <img src="https://i.pravatar.cc/60?img=1" alt="" />
+            <div>
+              <h3>Samantha Wheeler</h3>
+              <p>New York City, NY</p>
+            </div>
+            <span class="icon">👾</span>
+          </div>
+          <p class="batch">Batch No UST-M44000</p>
+          <p class="desc">
+            At vero eos et accusamus et iusto odio dignissimos ducimus qui
+            blanditiis praesentium...
+          </p>
+          <p class="grievance">Grievances <span>20</span></p>
+        </div>
+
+        <div class="card">
+          <div class="top">
+            <img src="https://i.pravatar.cc/60?img=2" alt="" />
+            <div>
+              <h3>David Persie</h3>
+              <p>New York City, NY</p>
+            </div>
+            <span class="icon">👾</span>
+          </div>
+          <p class="batch">Batch No UST-M44000</p>
+          <p class="desc">
+            At vero eos et accusamus et iusto odio dignissimos ducimus qui
+            blanditiis praesentium...
+          </p>
+          <p class="grievance">Grievances <span>2</span></p>
+        </div>
+
+        <div class="card">
+          <div class="top">
+            <img src="https://i.pravatar.cc/60?img=3" alt="" />
+            <div>
+              <h3>Natalie Parker</h3>
+              <p>New York City, NY</p>
+            </div>
+            <span class="icon">👾</span>
+          </div>
+          <p class="batch">Batch No UST-M44000</p>
+          <p class="desc">
+            At vero eos et accusamus et iusto odio dignissimos ducimus qui
+            blanditiis praesentium...
+          </p>
+          <p class="grievance">Grievances <span>2</span></p>
+        </div>
+
+        <div class="card">
+          <div class="top">
+            <img src="https://i.pravatar.cc/60?img=4" alt="" />
+            <div>
+              <h3>John Carter</h3>
+              <p>Los Angeles, CA</p>
+            </div>
+            <span class="icon">👾</span>
+          </div>
+          <p class="batch">Batch No UST-M44000</p>
+          <p class="desc">
+            At vero eos et accusamus et iusto odio dignissimos ducimus qui
+            blanditiis praesentium...
+          </p>
+          <p class="grievance">Grievances <span>5</span></p>
+        </div>
+
+        <div class="card">
+          <div class="top">
+            <img src="https://i.pravatar.cc/60?img=5" alt="" />
+            <div>
+              <h3>Emma Watson</h3>
+              <p>Chicago, IL</p>
+            </div>
+            <span class="icon">👾</span>
+          </div>
+          <p class="batch">Batch No UST-M44000</p>
+          <p class="desc">
+            At vero eos et accusamus et iusto odio dignissimos ducimus qui
+            blanditiis praesentium...
+          </p>
+          <p class="grievance">Grievances <span>12</span></p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="floating-element">⚖️</div>
+      <div class="floating-element">📋</div>
+      <div class="floating-element">🏛️</div>
+
+      <div class="header">
+        <h1>All Your Legal Needs in One Place</h1>
+        <p>
+          From reviews to AI-powered help — explore every tool you need to make
+          smarter legal choices.
+        </p>
+      </div>
+
+      <div class="container">
+        <div class="left-column">
+          <div class="feature-card">
+            <div class="feature-header">
+              <div class="feature-icon">⭐</div>
+              <div class="feature-title">Trusted Lawyer<br />Reviews</div>
+            </div>
+            <ul class="feature-list">
+              <li>
+                Read real experiences from clients who've worked with lawyers
+                near you.
+              </li>
+              <li>Ratings and feedback to guide your decision.</li>
+            </ul>
+            <button class="feature-button">Post Review</button>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-header">
+              <div class="feature-icon">📖</div>
+              <div class="feature-title">Storyboard<br />Experience</div>
+            </div>
+            <ul class="feature-list">
+              <li>Post and browse user-shared experiences in a visual feed.</li>
+              <li>Inspire others with real stories and learn from theirs.</li>
+            </ul>
+            <button class="feature-button">Browse Storyboard</button>
+          </div>
+        </div>
+
+        <div class="center-image">
+          <img
+            src="indian-Lawyer.png"
+            alt="Professional Lawyer"
+            class="professional-image"
+          />
+        </div>
+
+        <div class="right-column">
+          <div class="feature-card">
+            <div class="feature-header">
+              <div class="feature-icon">👥</div>
+              <div class="feature-title">Community<br />Discussions</div>
+            </div>
+            <ul class="feature-list">
+              <li>
+                Join & Post topic-based discussions with like-minded members.
+              </li>
+              <li>Get advice, share updates, and build connections.</li>
+            </ul>
+            <button class="feature-button">Browse Community</button>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-header">
+              <div class="feature-icon">🤖</div>
+              <div class="feature-title">AI & Document<br />Help</div>
+            </div>
+            <ul class="feature-list">
+              <li>
+                Get quick answers and guidance from our AI, trained for legal
+                queries.
+              </li>
+              <li>
+                Securely upload your legal documents for instant AI-powered
+                review.
+              </li>
+            </ul>
+            <button class="feature-button">Chat with AI</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="anon-section">
+      <div class="content">
+        <h2>Not Ready to Share Your Name? No Problem</h2>
+        <p class="desc">
+          Whether it’s a personal story, a legal question, or an honest review—you can post without revealing your identity. 
+          Our anonymous mode lets you share safely while still getting expert advice and community support.
+        </p>
+    
+        <div class="features">
+          <div class="feature">
+            <span class="icon">🙈</span>
+            <p>Hide your name & profile picture</p>
+          </div>
+          <div class="feature">
+            <span class="icon">💬</span>
+            <p>Still get replies & guidance</p>
+          </div>
+          <div class="feature">
+            <span class="icon">🛡️</span>
+            <p>Full encryption for your content</p>
+          </div>
+          <div class="feature">
+            <span class="icon">⭐</span>
+            <p>Safe Space for Honest Reviews</p>
+          </div>
+        </div>
+      </div>
+    
+      <div class="image">
+        <!-- Replace this image with your silhouette -->
+        <img src="shandow.png" alt="Silhouette">
+      </div>
+    </section>
+
+    <section class="app-download">
+      <div class="app-text">
+        <h2>Download the “The Client Tell” <br> app to get started</h2>
+        <p>
+          Post reviews, browse community and storyboard, and stay informed — <br>all from your phone. 
+          Download now on Google Play or the App Store.
+        </p>
+    
+        <div class="store-buttons">
+          <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play"></a>
+          <a href="#"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store"></a>
+        </div>
+      </div>
+    
+      <div class="app-mockup">
+        <!-- Replace with your phone mock images -->
+        <img src="mobile.png" alt="Phone Mockup">
+      </div>
+    </section>
+
+    <section class="faq-section">
+      <div class="faq-left">
+        <h2>Frequently Asked Questions</h2>
+        <p class="subtitle">These are the questions we hear more often</p>
+    
+        <div class="faq-item">
+          <button class="faq-question">How do I know the reviews are genuine and not fake or spam? <span>+</span></button>
+          <div class="faq-answer">Our team moderates reviews and uses filters to ensure authenticity. Spam or fake reviews are removed.</div>
+        </div>
+    
+        <div class="faq-item active">
+          <button class="faq-question">Are Reviews really anonymous, and how do you protect my identity? <span>x</span></button>
+          <div class="faq-answer">Yes. When you post a review, you have the option to keep yourself hidden from public view. We also encrypt all review data and communication so it can’t be traced back to you. Even our internal team cannot link your review to your personal identity — your privacy is our top priority.</div>
+        </div>
+    
+        <div class="faq-item">
+          <button class="faq-question">Can I use The Client Tell if I’m not sure which lawyer I’m going to hire yet? <span>+</span></button>
+          <div class="faq-answer">Yes, you can explore reviews and experiences shared by others to make an informed choice before hiring.</div>
+        </div>
+    
+        <div class="faq-item">
+          <button class="faq-question">Is The Client Tell only for sharing negative reviews, or can I post positive feedback too? <span>+</span></button>
+          <div class="faq-answer">You can post both positive and negative feedback. We encourage balanced and honest reviews to help the community.</div>
+        </div>
+      </div>
+    
+      <div class="faq-right">
+        <h3>Don’t see the answer you need?</h3>
+        <p>That’s ok, Just drop us a message and we will get back to you ASAP</p>
+        <a href="#" class="contact-btn">Contact Us</a>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- Left Logo and Text -->
+        <div class="footer-left">
+          <img src="law-removebg-preview.png" alt="The Client Tell Logo" class="footer-logo" />
+          <h3>The Client Tell</h3>
+          <p>
+            Helping you choose right lawyer – with real reviews, AI tools, 
+            and a safe space for honest experiences
+          </p>
+        </div>
+    
+        <!-- Links Section -->
+        <div class="footer-links">
+          <div>
+            <h4>QUICK LINKS</h4>
+            <ul>
+              <li><a href="#">Reviews</a></li>
+              <li><a href="#">Community</a></li>
+              <li><a href="#">Storyboard</a></li>
+              <li><a href="#">AI & Document Help</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>COMPANY</h4>
+            <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4>LEGAL</h4>
+            <ul>
+              <li><a href="#">Terms of Service</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    
+      <!-- Bottom Bar -->
+      <div class="footer-bottom">
+        <p>© 2025 The Client Tell. All rights reserved.</p>
+      </div>
+    </footer>
+    
+    
+    <script>
+    const faqItems = document.querySelectorAll(".faq-item");
+    
+    faqItems.forEach(item => {
+      const question = item.querySelector(".faq-question");
+      question.addEventListener("click", () => {
+        item.classList.toggle("active");
+        // update + / x
+        const symbol = question.querySelector("span");
+        symbol.textContent = item.classList.contains("active") ? "x" : "+";
+      });
+    });
+
+        // Add subtle hover animations
+        const cards = document.querySelectorAll('.feature-card');
+        
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-5px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Button click animations
+        const buttons = document.querySelectorAll('.feature-button');
+        
+        buttons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                // Create ripple effect
+                const ripple = document.createElement('span');
+                const rect = button.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                ripple.style.cssText = `
+                    position: absolute;
+                    width: ${size}px;
+                    height: ${size}px;
+                    left: ${x}px;
+                    top: ${y}px;
+                    background: rgba(255,255,255,0.3);
+                    border-radius: 50%;
+                    transform: scale(0);
+                    animation: ripple 0.6s ease-out;
+                    pointer-events: none;
+                `;
+                
+                button.style.position = 'relative';
+                button.style.overflow = 'hidden';
+                button.appendChild(ripple);
+                
+                setTimeout(() => ripple.remove(), 600);
+            });
+        });
+
+        // Add CSS for ripple animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(2);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+    </script>
+  </body>
+</html>
