@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Account</title>
+    <link rel="stylesheet" href="css/register.css">
+    </head>
+<body>
+    <div class="register-container">
+        <div class="left-panel">
+            <h1>Start Your Journey with Us</h1>
+            
+              
+        </div>
+
+        <div class="right-panel">
+            <div class="form-header">
+                <h2>Register Account</h2>
+                <p>Sign in to your account</p>
+            </div>
+
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="fullname">Full name</label>
+                    <div class="input-container">
+                        <span class="user-icon">👤</span>
+                        <input 
+                            type="text" 
+                            id="fullname" 
+                            class="form-input input-with-icon" 
+                            placeholder="Jack Williams"
+                            required
+                        >
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <div class="input-container">
+                        <span class="email-icon">✉️</span>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            class="form-input input-with-icon" 
+                            placeholder="jack-will@example.com"
+                            required
+                        >
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Contact Number</label>
+                    <div class="phone-input-container">
+                        <button type="button" class="country-code" onclick="toggleCountryDropdown()">
+                            <div class="flag-icon"></div>
+                            <span class="dropdown-arrow">▼</span>
+                        </button>
+                        <input 
+                            type="tel" 
+                            id="phone" 
+                            class="phone-number" 
+                            placeholder="+91 000 000 0000"
+                            required
+                        >
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="input-container">
+                        <span class="lock-icon">🔒</span>
+                        <input 
+                            type="password" 
+                            id="password" 
+                            class="form-input input-with-icon" 
+                            placeholder="Enter your password"
+                            required
+                        >
+                        <button type="button" class="password-toggle" onclick="togglePassword('password')">
+                            👁️
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <div class="input-container">
+                        <span class="lock-icon">🔒</span>
+                        <input 
+                            type="password" 
+                            id="confirmPassword" 
+                            class="form-input input-with-icon" 
+                            placeholder="Confirm your password"
+                            required
+                        >
+                        <button type="button" class="password-toggle" onclick="togglePassword('confirmPassword')">
+                            👁️
+                        </button>
+                    </div>
+                </div>
+
+                <button type="submit" class="register-btn" onclick="handleSignIn()">Register</button>
+            </form>
+
+            <div class="signin-link">
+                Already have an account? <a href="login.html">Sign up</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function togglePassword(fieldId) {
+            const passwordInput = document.getElementById(fieldId);
+            const toggleBtn = passwordInput.parentNode.querySelector('.password-toggle');
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleBtn.textContent = '🙈';
+            } else {
+                passwordInput.type = 'password';
+                toggleBtn.textContent = '👁️';
+            }
+        }
+
+        function toggleCountryDropdown() {
+            alert('Country selection dropdown would be implemented here');
+        }
+
+        function handleSignIn() {
+            alert('Sign in functionality would be implemented here');
+        }
+
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const fullname = document.getElementById('fullname').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            
+            // Validate passwords match
+            if (password !== confirmPassword) {
+                alert('Passwords do not match!');
+                return;
+            }
+            
+            if (fullname && email && phone && password && confirmPassword) {
+                // Add loading state
+                const submitBtn = document.querySelector('.register-btn');
+                submitBtn.textContent = 'Registering...';
+                submitBtn.disabled = true;
+                
+                // Simulate registration process
+                setTimeout(() => {
+                    alert(`Registration attempted with:\nName: ${fullname}\nEmail: ${email}\nPhone: ${phone}`);
+                    
+                    // Reset button
+                    submitBtn.textContent = 'Register';
+                    submitBtn.disabled = false;
+                }, 1500);
+            }
+        });
+
+        // Add smooth focus animations
+        document.querySelectorAll('.form-input, .phone-input-container').forEach(element => {
+            const input = element.querySelector('input') || element;
+            
+            input.addEventListener('focus', function() {
+                const container = element.classList.contains('phone-input-container') ? element : element.parentNode;
+                container.style.transform = 'scale(1.02)';
+            });
+            
+            input.addEventListener('blur', function() {
+                const container = element.classList.contains('phone-input-container') ? element : element.parentNode;
+                container.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>

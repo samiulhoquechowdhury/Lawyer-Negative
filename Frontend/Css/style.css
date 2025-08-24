@@ -1,0 +1,858 @@
+   * {
+       margin: 0;
+       padding: 0;
+       box-sizing: border-box;
+   }
+
+   body {
+       font-family: 'Inter', sans-serif;
+       background-color: #1A103C;
+       color: #FFFFFF;
+       min-height: 100vh;
+       overflow-x: hidden;
+   }
+
+   .container {
+       width: 100%;
+       max-width: 1280px;
+       margin-left: auto;
+       margin-right: auto;
+       padding-left: 1rem;
+       padding-right: 1rem;
+   }
+
+   /* Header Styles */
+   .main-header {
+       position: absolute;
+       width: 100%;
+       z-index: 1000;
+       padding: 1.25rem 0;
+       background: rgba(26, 16, 60, 0.5);
+       backdrop-filter: blur(10px);
+   }
+
+   .header-content {
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+   }
+
+   .logo {
+       display: flex;
+       align-items: center;
+       gap: 0.75rem;
+       text-decoration: none;
+       color: white;
+   }
+
+   .logo-icon {
+       font-size: 1.875rem;
+       color: #1A103C;
+   }
+
+   .logo-icon-wrapper {
+       width: 3rem;
+       height: 3rem;
+       background-color: white;
+       border-radius: 0.375rem;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+   }
+
+   .logo-text {
+       font-size: 1.25rem;
+       font-weight: 700;
+       letter-spacing: 0.05em;
+   }
+
+   .main-nav {
+       display: none;
+   }
+
+   .nav-menu {
+       /* Using nav-menu for consistency */
+       display: none;
+       gap: 30px;
+       list-style: none;
+   }
+
+   .nav-menu a {
+       font-weight: 600;
+       letter-spacing: 0.05em;
+       text-decoration: none;
+       color: white;
+       transition: color 0.3s ease;
+   }
+
+   .nav-menu a:hover,
+   .nav-menu a.active-nav {
+       color: #A78BFA;
+   }
+
+   .header-actions {
+       display: flex;
+       align-items: center;
+       gap: 1rem;
+   }
+
+   .login-button-wrapper {
+       position: relative;
+   }
+
+   .login-button {
+       background-color: #8B5CF6;
+       color: white;
+       font-weight: 700;
+       padding: 0.5rem 1.5rem;
+       border: none;
+       border-radius: 0.5rem;
+       cursor: pointer;
+       transition: background-color 0.3s ease;
+       display: inline-block;
+       text-decoration: none;
+   }
+
+   .login-button:hover {
+       background-color: #7C3AED;
+   }
+
+   .status-indicator {
+       position: absolute;
+       bottom: -0.25rem;
+       right: -0.25rem;
+       width: 0.75rem;
+       height: 0.75rem;
+       background-color: #34D399;
+       border-radius: 9999px;
+       border: 2px solid #1A103C;
+   }
+
+   .mobile-menu-button {
+       display: block;
+       background: none;
+       border: none;
+       color: white;
+       font-size: 1.5rem;
+       cursor: pointer;
+   }
+
+   /* Hero Section */
+   .hero-section {
+       background-image: url('https://placehold.co/1920x1080/1A103C/FFFFFF?text=Background+Image');
+       background-size: cover;
+       background-position: center;
+       position: relative;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       min-height: 100vh;
+       padding-top: 8rem;
+       padding-bottom: 4rem;
+   }
+
+   .hero-section::before {
+       content: '';
+       position: absolute;
+       inset: 0;
+       background-color: rgba(26, 16, 60, 0.85);
+   }
+
+   .hero-content {
+       position: relative;
+       z-index: 10;
+       text-align: center;
+       width: 100%;
+   }
+
+   .hero-title {
+       font-size: 2.25rem;
+       font-weight: 800;
+       line-height: 1.2;
+       margin-bottom: 1rem;
+   }
+
+   .hero-subtitle {
+       font-size: 1.125rem;
+       color: #D1D5DB;
+       max-width: 48rem;
+       margin: 0 auto 2.5rem auto;
+   }
+
+   /* Search Form */
+   .form-container {
+       background-color: rgba(45, 35, 85, 0.6);
+       backdrop-filter: blur(5px);
+       max-width: 56rem;
+       margin: 0 auto;
+       padding: 1.5rem;
+       border-radius: 0.5rem;
+   }
+
+   .form-grid {
+       display: grid;
+       gap: 1rem;
+   }
+
+   .form-input,
+   .form-select {
+       width: 100%;
+       background-color: #3B2D70;
+       border: 1px solid #5D4E99;
+       color: white;
+       padding: 0.75rem;
+       border-radius: 0.375rem;
+       font-size: 1rem;
+   }
+
+   .form-input::placeholder {
+       color: #9CA3AF;
+   }
+
+   .form-input:focus,
+   .form-select:focus {
+       outline: none;
+       box-shadow: 0 0 0 2px #A78BFA;
+   }
+
+   .form-select {
+       appearance: none;
+       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+       background-repeat: no-repeat;
+       background-position: right 0.75rem center;
+       background-size: 1em;
+   }
+
+   .search-button {
+       background-color: #8B5CF6;
+       color: white;
+       font-weight: 700;
+       padding: 0.75rem 1.5rem;
+       border: none;
+       border-radius: 0.375rem;
+       cursor: pointer;
+       width: 100%;
+       transition: background-color 0.3s ease;
+   }
+
+   .search-button:hover {
+       background-color: #7C3AED;
+   }
+
+   /* Floating Action Button & AI Modal */
+   .fab {
+       position: fixed;
+       bottom: 2rem;
+       right: 2rem;
+       z-index: 20;
+       width: 3.5rem;
+       height: 3.5rem;
+       background-color: #F97316;
+       border-radius: 9999px;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       color: white;
+       font-size: 1.5rem;
+       border: none;
+       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+       cursor: pointer;
+       transition: background-color 0.3s ease;
+   }
+
+   .fab:hover {
+       background-color: #EA580C;
+   }
+
+   .modal-overlay {
+       display: none;
+       position: fixed;
+       top: 0;
+       left: 0;
+       width: 100%;
+       height: 100%;
+       background: rgba(0, 0, 0, 0.7);
+       backdrop-filter: blur(5px);
+       justify-content: center;
+       align-items: center;
+       z-index: 2000;
+   }
+
+   .ai-assistant-content {
+       position: fixed;
+       bottom: 110px;
+       right: 40px;
+       width: 350px;
+       background: #23233c;
+       border-radius: 12px;
+       box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+       z-index: 2001;
+   }
+
+
+   .ai-header {
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       padding: 15px;
+       border-bottom: 1px solid #4a3f82;
+   }
+
+   .ai-header i {
+       margin-left: 15px;
+   }
+
+   .ai-tabs {
+       display: flex;
+       padding: 0 15px;
+       border-bottom: 1px solid #4a3f82;
+   }
+
+   .ai-tab-btn {
+       background: none;
+       border: none;
+       color: #9ca3af;
+       padding: 10px 15px;
+       cursor: pointer;
+   }
+
+   .ai-tab-btn.active {
+       color: #8B5CF6;
+       border-bottom: 2px solid #8B5CF6;
+   }
+
+   .ai-body {
+       padding: 15px;
+       height: 300px;
+       overflow-y: auto;
+   }
+
+   .ai-footer {
+       display: flex;
+       align-items: center;
+       padding: 15px;
+       border-top: 1px solid #4a3f82;
+   }
+
+   .ai-footer input {
+       flex: 1;
+       background: #1a1a2e;
+       border: 1px solid #4a3f82;
+       color: white;
+       padding: 8px;
+       border-radius: 15px;
+       outline: none;
+   }
+
+   .ai-footer i {
+       margin: 0 10px;
+   }
+
+   .ai-footer button {
+       background: #8B5CF6;
+       border: none;
+       color: white;
+       width: 32px;
+       height: 32px;
+       border-radius: 50%;
+       cursor: pointer;
+   }
+
+   .close-ai-btn {
+       position: absolute;
+       bottom: -60px;
+       right: 0;
+       background: #f56565;
+       color: white;
+       width: 40px;
+       height: 40px;
+       border-radius: 50%;
+       border: none;
+       font-size: 20px;
+       cursor: pointer;
+   }
+
+   /* Other Sections */
+   
+   .section {
+       padding: 4rem 0;
+   }
+
+   .section-title {
+       font-size: 2rem;
+       font-weight: 700;
+       margin-bottom: 0.5rem;
+   }
+
+   .section-subtitle {
+       color: #D1D5DB;
+       margin-bottom: 3rem;
+   }
+
+   .lawyers-grid {
+       display: grid;
+       gap: 1.5rem;
+   }
+
+   .lawyer-card {
+       background-color: #2D2553;
+       border-radius: 0.75rem;
+       padding: 1.5rem;
+   }
+
+   .lawyer-header {
+       display: flex;
+       justify-content: space-between;
+       align-items: flex-start;
+       margin-bottom: 1rem;
+   }
+
+   .lawyer-info {
+       display: flex;
+       align-items: center;
+       gap: 1rem;
+   }
+
+   .lawyer-avatar {
+       width: 3.5rem;
+       height: 3.5rem;
+       border-radius: 9999px;
+       object-fit: cover;
+       border: 2px solid #8B5CF6;
+   }
+
+   .lawyer-name {
+       font-size: 1.125rem;
+       font-weight: 600;
+   }
+
+   .lawyer-location {
+       color: #9CA3AF;
+       font-size: 0.875rem;
+   }
+
+   .play-button {
+       background: none;
+       border: none;
+       color: #D1D5DB;
+       cursor: pointer;
+       font-size: 0.875rem;
+   }
+
+   .action-icon {
+       width: 2.5rem;
+       height: 2.5rem;
+       background-color: #4A3F82;
+       border-radius: 9999px;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       font-size: 1.25rem;
+   }
+
+   .lawyer-body p {
+       color: #D1D5DB;
+       line-height: 1.6;
+       font-size: 0.9rem;
+   }
+
+   .lawyer-body .see-more {
+       color: #A78BFA;
+       text-decoration: none;
+       font-weight: 500;
+   }
+
+   .grievances {
+       color: #F87171;
+       font-weight: 600;
+       margin-top: 1rem;
+   }
+
+   .legal-needs-grid {
+       display: grid;
+       gap: 2rem;
+       align-items: center;
+   }
+
+   .feature-card {
+       background-color: #2D2553;
+       border-radius: 0.75rem;
+       padding: 2rem;
+   }
+
+   .feature-header {
+       display: flex;
+       align-items: center;
+       gap: 1rem;
+       margin-bottom: 1rem;
+   }
+
+   .feature-icon {
+       width: 3rem;
+       height: 3rem;
+       background-color: #4A3F82;
+       border-radius: 9999px;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       font-size: 1.5rem;
+   }
+
+   .feature-title {
+       font-size: 1.25rem;
+       font-weight: 600;
+   }
+
+   .feature-card ul {
+       list-style-position: inside;
+       padding-left: 0.5rem;
+       color: #D1D5DB;
+       margin-bottom: 1.5rem;
+   }
+
+   .feature-card li {
+       margin-bottom: 0.5rem;
+   }
+
+   .feature-button {
+       width: 100%;
+       background-color: #4A3F82;
+       color: white;
+       padding: 0.75rem;
+       border: none;
+       border-radius: 0.5rem;
+       font-weight: 600;
+       cursor: pointer;
+       transition: background-color 0.3s ease;
+   }
+
+   .feature-button:hover {
+       background-color: #5D4E99;
+   }
+
+   .center-image {
+       display: none;
+   }
+
+   .privacy-grid {
+       display: grid;
+       gap: 2rem;
+       align-items: center;
+   }
+
+   .privacy-features-grid {
+       display: grid;
+       gap: 1rem;
+       grid-template-columns: repeat(2, 1fr);
+   }
+
+   .privacy-feature-card {
+       background-color: #2D2553;
+       border-radius: 0.75rem;
+       padding: 1.5rem;
+       display: flex;
+       align-items: center;
+       gap: 1rem;
+   }
+
+   .privacy-feature-card i {
+       font-size: 1.5rem;
+       color: #A78BFA;
+   }
+
+   .privacy-feature-card h3 {
+       font-size: 1.125rem;
+       font-weight: 600;
+   }
+
+   .privacy-image {
+       display: none;
+   }
+
+   .download-app-section {
+       position: relative;
+       overflow: hidden;
+   }
+
+   .download-app-grid {
+       display: grid;
+       gap: 2rem;
+       align-items: center;
+       position: relative;
+       z-index: 1;
+   }
+
+   .download-buttons {
+       display: flex;
+       gap: 1rem;
+       margin-top: 2rem;
+   }
+
+   .download-buttons img {
+       height: 48px;
+       cursor: pointer;
+   }
+
+   .phone-mockups {
+       display: none;
+       position: relative;
+       height: 500px;
+       justify-content: center;
+       align-items: center;
+   }
+
+   .phone-mockup {
+       position: absolute;
+       width: 250px;
+       height: auto;
+       border-radius: 1.5rem;
+       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+   }
+
+   .phone-mockup-1 {
+       transform: rotate(-6deg);
+   }
+
+   .phone-mockup-2 {
+       transform: rotate(6deg);
+       z-index: 2;
+   }
+
+   .faq-grid {
+       display: grid;
+       gap: 2rem;
+   }
+
+   .faq-item {
+       border-bottom: 1px solid #4A3F82;
+       padding-bottom: 1rem;
+       margin-bottom: 1rem;
+   }
+
+   .faq-question {
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       cursor: pointer;
+   }
+
+   .faq-question h3 {
+       font-size: 1.125rem;
+       font-weight: 600;
+   }
+
+   .faq-toggle {
+       font-size: 1.5rem;
+       color: #A78BFA;
+       transition: transform 0.3s ease;
+   }
+
+   .faq-answer {
+       max-height: 0;
+       overflow: hidden;
+       transition: max-height 0.5s ease, padding-top 0.5s ease;
+       color: #D1D5DB;
+       line-height: 1.6;
+   }
+
+   .faq-item.open .faq-answer {
+       max-height: 200px;
+       padding-top: 1rem;
+   }
+
+   .faq-item.open .faq-toggle {
+       transform: rotate(45deg);
+   }
+
+   .contact-card {
+       background-color: #2D2553;
+       border-radius: 0.75rem;
+       padding: 2rem;
+       text-align: center;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+   }
+
+   .contact-card h3 {
+       font-size: 1.5rem;
+       font-weight: 700;
+       margin-bottom: 1rem;
+   }
+
+   .contact-card p {
+       color: #D1D5DB;
+       margin-bottom: 1.5rem;
+   }
+
+   .contact-button {
+       background-color: #8B5CF6;
+       color: white;
+       padding: 0.75rem;
+       border: none;
+       border-radius: 0.5rem;
+       font-weight: 600;
+       cursor: pointer;
+       transition: background-color 0.3s ease;
+   }
+
+   .contact-button:hover {
+       background-color: #7C3AED;
+   }
+
+   .main-footer {
+       background-color: #1E1541;
+       padding-top: 4rem;
+   }
+
+   .footer-grid {
+       display: grid;
+       gap: 2rem;
+       padding-bottom: 4rem;
+       border-bottom: 1px solid #4A3F82;
+   }
+
+   .footer-logo-area .logo-text {
+       font-size: 1.5rem;
+       margin-top: 1rem;
+       margin-bottom: 1rem;
+   }
+
+   .footer-logo-area p {
+       color: #D1D5DB;
+   }
+
+   .footer-links h4 {
+       font-weight: 700;
+       margin-bottom: 1.5rem;
+       letter-spacing: 0.05em;
+   }
+
+   .footer-links ul {
+       list-style: none;
+   }
+
+   .footer-links li {
+       margin-bottom: 1rem;
+   }
+
+   .footer-links a {
+       color: #D1D5DB;
+       text-decoration: none;
+       transition: color 0.3s ease;
+   }
+
+   .footer-links a:hover {
+       color: white;
+   }
+
+   .copyright {
+       padding: 2rem 0;
+       text-align: center;
+       color: #9CA3AF;
+   }
+
+
+   .main-footer {
+       background-color: #140f27;
+   }
+
+
+   /* Responsive Styles */
+   @media (min-width: 768px) {
+
+       .main-nav,
+       .nav-menu {
+           display: flex;
+           gap: 2.5rem;
+       }
+
+       .mobile-menu-button {
+           display: none;
+       }
+
+       .hero-title {
+           font-size: 3rem;
+       }
+
+       .form-grid {
+           grid-template-columns: repeat(2, 1fr);
+       }
+
+       .lawyers-grid {
+           grid-template-columns: repeat(2, 1fr);
+       }
+
+       .faq-grid {
+           grid-template-columns: 2fr 1fr;
+       }
+
+       .footer-grid {
+           grid-template-columns: repeat(2, 1fr);
+       }
+   }
+
+   @media (min-width: 1024px) {
+       .hero-title {
+           font-size: 3.75rem;
+       }
+
+       .form-grid {
+           grid-template-columns: repeat(6, 1fr);
+       }
+
+       .attorney-name {
+           grid-column: 1 / span 4;
+       }
+
+       .bar-number {
+           grid-column: 5 / span 2;
+       }
+
+       .city-practice {
+           grid-column: 1 / span 2;
+       }
+
+       .state-practice {
+           grid-column: 3 / span 2;
+       }
+
+       .search-button-wrapper {
+           grid-column: 5 / span 2;
+       }
+
+       .lawyers-grid {
+           grid-template-columns: repeat(3, 1fr);
+       }
+
+       .legal-needs-grid {
+           grid-template-columns: 1fr auto 1fr;
+       }
+
+       .center-image {
+           display: block;
+           max-width: 300px;
+           border-radius: 0.5rem;
+       }
+
+       .privacy-grid {
+           grid-template-columns: 1fr 1fr;
+       }
+
+       .privacy-image {
+           display: block;
+           opacity: 0.3;
+       }
+
+       .download-app-grid {
+           grid-template-columns: 1fr 1fr;
+       }
+
+       .phone-mockups {
+           display: flex;
+       }
+
+       .footer-grid {
+           grid-template-columns: 2fr 1fr 1fr 1fr;
+       }
+   }

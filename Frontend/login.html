@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - The Client Tell</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/login.css">
+  </head>
+<body>
+    
+    
+    <div class="login-container">
+        <div class="left-panel">
+            <h1>Start Your Journey with Us</h1>
+            
+        </div>
+
+        <div class="right-panel">
+            <div class="form-header">
+                <h2>Welcome Back</h2>
+                <p>Sign in to your account</p>
+            </div>
+
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <div class="input-container">
+                        <input 
+                            type="email" 
+                            id="email" 
+                            class="form-input" 
+                            placeholder="dane@example.com"
+                            required
+                        >
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="input-container">
+                        <input 
+                            type="password" 
+                            id="password" 
+                            class="form-input" 
+                            placeholder="Enter your password"
+                            required
+                        >
+                        <button type="button" class="password-toggle" onclick="togglePassword()">
+                            👁️
+                        </button>
+                    </div>
+                    <div class="forgot-password">
+                        <a href="#" onclick="handleForgotPassword()">Forgot Password</a>
+                    </div>
+                </div>
+
+                <button type="submit" class="sign-in-btn" onclick="handleSignUp()">Sign In</button>
+            </form>
+
+            <div class="signup-link">
+                Don't have an account? <a href="register.html" >Sign up</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function togglePassword() {
+            const passwordInput = document.getElementById('password');
+            const toggleBtn = document.querySelector('.password-toggle');
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleBtn.textContent = '🙈';
+            } else {
+                passwordInput.type = 'password';
+                toggleBtn.textContent = '👁️';
+            }
+        }
+
+        function handleForgotPassword() {
+            alert('Forgot password functionality would be implemented here');
+        }
+
+        function handleSignUp() {
+            alert('Sign up functionality would be implemented here');
+        }
+
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            if (email && password) {
+                // Add loading state
+                const submitBtn = document.querySelector('.sign-in-btn');
+                submitBtn.textContent = 'Signing In...';
+                submitBtn.disabled = true;
+                
+                // Simulate login process
+                setTimeout(() => {
+                    alert(`Login attempted with:\nEmail: ${email}\nPassword: ${'*'.repeat(password.length)}`);
+                    
+                    // Reset button
+                    submitBtn.textContent = 'Sign In';
+                    submitBtn.disabled = false;
+                }, 1500);
+            }
+        });
+
+        // Add smooth focus animations
+        document.querySelectorAll('.form-input').forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentNode.style.transform = 'scale(1.02)';
+            });
+            
+            input.addEventListener('blur', function() {
+                this.parentNode.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
